@@ -766,6 +766,7 @@ input[type=email] {
 
     .side .menu-button {
         display: block;
+        top: 150px;
         right: 0;
     }
 
@@ -849,7 +850,8 @@ input[type=email] {
 
     .side .menu-button {
         display: block;
-        /* right: ; */
+        right:0 ;
+        top: 150px;
     }
 
     .side .menu-button a{
