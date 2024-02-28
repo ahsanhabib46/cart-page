@@ -1,0 +1,899 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+}
+
+/* ################### Utility class ################# */
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+.theme-color-bg {
+    background: #000;
+}
+
+.theme-color-font {
+    color: #00000099;
+}
+
+.color-white {
+    color: #fff;
+}
+
+.padding-global {
+    padding: 100px 0;
+}
+
+.btn-global {
+    border-radius: 30px;
+    padding: 0.3rem 1rem;
+    background-color: #f0f0f0;
+    border: 0;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #777;
+    color: #fff;
+}
+
+.active {
+    background-color: #000;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: #00000099;
+}
+
+.star {
+    color: #FFC633;
+    font-size: 1.5rem;
+}
+
+.half-star {
+    background: linear-gradient(to right, gold 50%, gray 50%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.details-head {
+    font-size: 2.3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+/* ####################### Navbar styling###################### */
+.top {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    background: #000;
+    color: #fff;
+    padding: 0.5rem;
+}
+
+.top span {
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+nav {
+    height: 100px;
+    padding: 1.8rem 0;
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+}
+
+nav a {
+    height: 48px;
+    padding: 0.5rem 1.5rem;
+    margin: 0 auto;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+nav a:hover {
+    background-color: #f0f0f0;
+}
+
+nav li:first-child {
+    margin-right: auto;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+nav .head a {
+    padding-left: 0;
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    z-index: 999;
+}
+
+.sidebar li {
+    width: 100%;
+}
+
+.sidebar a {
+    width: 100%;
+}
+
+.menu-button {
+    display: none;
+}
+
+.search input {
+    padding: 5px 50px 5px 10px;
+    border-radius: 20px;
+    font-size: 1rem;
+    border: none;
+    background-color: #f0f0f0;
+}
+
+input[type=search] {
+    border-radius: 30px;
+    font-size: 0.9rem;
+    background-image: url(./images/Vector\ \(7\).png);
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+}
+
+.filter-div {
+    /* border: 1px solid #ddd; */
+    border-radius: 10px;
+    /* padding: 1rem; */
+    line-height: 2.5rem;
+    display: flex;
+
+    /* justify-content: space-between; */
+    gap: 2rem;
+    /* display: grid;
+    grid-template-columns: repeat(4,1fr); */
+    margin-bottom: 8rem;
+}
+
+.filter {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+.fil-head {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 0.5rem;
+}
+
+.home {
+    margin-bottom: 2rem;
+}
+
+/* ##################### color ################ */
+.choose-color {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.checkbox {
+    position: relative;
+    overflow: hidden;
+}
+
+.checkbox__input {
+    position: absolute;
+    display: none;
+}
+
+.color {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid #333;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.checkbox__inner {
+    background-color: #00c12b;
+}
+
+.checkbox__input:checked+.checkbox__inner {
+    border-color: #00c12b;
+    background-color: #00c12b;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='14px' height='10px' viewBox='0 0 14 10' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 59.1 (86144) - https://sketch.com --%3E%3Ctitle%3Echeck%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='ios_modification' transform='translate(-27.000000, -191.000000)' fill='%23FFFFFF' fill-rule='nonzero'%3E%3Cg id='Group-Copy' transform='translate(0.000000, 164.000000)'%3E%3Cg id='ic-check-18px' transform='translate(25.000000, 23.000000)'%3E%3Cpolygon id='check' points='6.61 11.89 3.5 8.78 2.44 9.84 6.61 14 15.56 5.05 14.5 4'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: 14px 10px;
+}
+
+.checkbox__inner1 {
+    background-color: red;
+}
+
+.checkbox__input:checked+.checkbox__inner1 {
+    border-color: red;
+    background-color: red;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='14px' height='10px' viewBox='0 0 14 10' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 59.1 (86144) - https://sketch.com --%3E%3Ctitle%3Echeck%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='ios_modification' transform='translate(-27.000000, -191.000000)' fill='%23FFFFFF' fill-rule='nonzero'%3E%3Cg id='Group-Copy' transform='translate(0.000000, 164.000000)'%3E%3Cg id='ic-check-18px' transform='translate(25.000000, 23.000000)'%3E%3Cpolygon id='check' points='6.61 11.89 3.5 8.78 2.44 9.84 6.61 14 15.56 5.05 14.5 4'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: 14px 10px;
+}
+
+.checkbox__inner2 {
+    background-color: yellow;
+}
+
+.checkbox__input:checked+.checkbox__inner2 {
+    border-color: yellow;
+    background-color: yellow;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='14px' height='10px' viewBox='0 0 14 10' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 59.1 (86144) - https://sketch.com --%3E%3Ctitle%3Echeck%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='ios_modification' transform='translate(-27.000000, -191.000000)' fill='%23FFFFFF' fill-rule='nonzero'%3E%3Cg id='Group-Copy' transform='translate(0.000000, 164.000000)'%3E%3Cg id='ic-check-18px' transform='translate(25.000000, 23.000000)'%3E%3Cpolygon id='check' points='6.61 11.89 3.5 8.78 2.44 9.84 6.61 14 15.56 5.05 14.5 4'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: 14px 10px;
+}
+
+.checkbox__inner3 {
+    background-color: orange;
+}
+
+.checkbox__input:checked+.checkbox__inner3 {
+    border-color: orange;
+    background-color: orange;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='14px' height='10px' viewBox='0 0 14 10' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 59.1 (86144) - https://sketch.com --%3E%3Ctitle%3Echeck%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='ios_modification' transform='translate(-27.000000, -191.000000)' fill='%23FFFFFF' fill-rule='nonzero'%3E%3Cg id='Group-Copy' transform='translate(0.000000, 164.000000)'%3E%3Cg id='ic-check-18px' transform='translate(25.000000, 23.000000)'%3E%3Cpolygon id='check' points='6.61 11.89 3.5 8.78 2.44 9.84 6.61 14 15.56 5.05 14.5 4'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: 14px 10px;
+}
+
+.checkbox__inner3 {
+    background-color: skyblue;
+}
+
+.checkbox__input:checked+.checkbox__inner3 {
+    border-color: skyblue;
+    background-color: skyblue;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='14px' height='10px' viewBox='0 0 14 10' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 59.1 (86144) - https://sketch.com --%3E%3Ctitle%3Echeck%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='ios_modification' transform='translate(-27.000000, -191.000000)' fill='%23FFFFFF' fill-rule='nonzero'%3E%3Cg id='Group-Copy' transform='translate(0.000000, 164.000000)'%3E%3Cg id='ic-check-18px' transform='translate(25.000000, 23.000000)'%3E%3Cpolygon id='check' points='6.61 11.89 3.5 8.78 2.44 9.84 6.61 14 15.56 5.05 14.5 4'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: 14px 10px;
+}
+
+.checkbox__inner4 {
+    background-color: blue;
+}
+
+.checkbox__input:checked+.checkbox__inner4 {
+    border-color: blue;
+    background-color: blue;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='14px' height='10px' viewBox='0 0 14 10' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 59.1 (86144) - https://sketch.com --%3E%3Ctitle%3Echeck%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='ios_modification' transform='translate(-27.000000, -191.000000)' fill='%23FFFFFF' fill-rule='nonzero'%3E%3Cg id='Group-Copy' transform='translate(0.000000, 164.000000)'%3E%3Cg id='ic-check-18px' transform='translate(25.000000, 23.000000)'%3E%3Cpolygon id='check' points='6.61 11.89 3.5 8.78 2.44 9.84 6.61 14 15.56 5.05 14.5 4'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: 14px 10px;
+}
+
+.checkbox__inner5 {
+    background-color: purple;
+}
+
+.checkbox__input:checked+.checkbox__inner5 {
+    border-color: purple;
+    background-color: purple;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='14px' height='10px' viewBox='0 0 14 10' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 59.1 (86144) - https://sketch.com --%3E%3Ctitle%3Echeck%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='ios_modification' transform='translate(-27.000000, -191.000000)' fill='%23FFFFFF' fill-rule='nonzero'%3E%3Cg id='Group-Copy' transform='translate(0.000000, 164.000000)'%3E%3Cg id='ic-check-18px' transform='translate(25.000000, 23.000000)'%3E%3Cpolygon id='check' points='6.61 11.89 3.5 8.78 2.44 9.84 6.61 14 15.56 5.05 14.5 4'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: 14px 10px;
+}
+
+.checkbox__inner6 {
+    background-color: pink;
+}
+
+.checkbox__input:checked+.checkbox__inner6 {
+    border-color: pink;
+    background-color: pink;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='14px' height='10px' viewBox='0 0 14 10' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 59.1 (86144) - https://sketch.com --%3E%3Ctitle%3Echeck%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='ios_modification' transform='translate(-27.000000, -191.000000)' fill='%23FFFFFF' fill-rule='nonzero'%3E%3Cg id='Group-Copy' transform='translate(0.000000, 164.000000)'%3E%3Cg id='ic-check-18px' transform='translate(25.000000, 23.000000)'%3E%3Cpolygon id='check' points='6.61 11.89 3.5 8.78 2.44 9.84 6.61 14 15.56 5.05 14.5 4'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: 14px 10px;
+}
+
+.checkbox__inner7 {
+    background-color: white;
+}
+
+.checkbox__input:checked+.checkbox__inner7 {
+    border-color: #333;
+    background-color: white;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='14px' height='10px' viewBox='0 0 14 10' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 59.1 (86144) - https://sketch.com --%3E%3Ctitle%3Echeck%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='ios_modification' transform='translate(-27.000000, -191.000000)' fill='%23FFFFFF' fill-rule='nonzero'%3E%3Cg id='Group-Copy' transform='translate(0.000000, 164.000000)'%3E%3Cg id='ic-check-18px' transform='translate(25.000000, 23.000000)'%3E%3Cpolygon id='check' points='6.61 11.89 3.5 8.78 2.44 9.84 6.61 14 15.56 5.05 14.5 4'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: 14px 10px;
+}
+
+.checkbox__inner8 {
+    background-color: black;
+}
+
+.checkbox__input:checked+.checkbox__inner8 {
+    border-color: black;
+    background-color: black;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='14px' height='10px' viewBox='0 0 14 10' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 59.1 (86144) - https://sketch.com --%3E%3Ctitle%3Echeck%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='ios_modification' transform='translate(-27.000000, -191.000000)' fill='%23FFFFFF' fill-rule='nonzero'%3E%3Cg id='Group-Copy' transform='translate(0.000000, 164.000000)'%3E%3Cg id='ic-check-18px' transform='translate(25.000000, 23.000000)'%3E%3Cpolygon id='check' points='6.61 11.89 3.5 8.78 2.44 9.84 6.61 14 15.56 5.05 14.5 4'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: 14px 10px;
+}
+
+.checkbox__inner9 {
+    background-color: navy;
+}
+
+.checkbox__input:checked+.checkbox__inner9 {
+    border-color: navy;
+    background-color: navy;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='14px' height='10px' viewBox='0 0 14 10' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 59.1 (86144) - https://sketch.com --%3E%3Ctitle%3Echeck%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='ios_modification' transform='translate(-27.000000, -191.000000)' fill='%23FFFFFF' fill-rule='nonzero'%3E%3Cg id='Group-Copy' transform='translate(0.000000, 164.000000)'%3E%3Cg id='ic-check-18px' transform='translate(25.000000, 23.000000)'%3E%3Cpolygon id='check' points='6.61 11.89 3.5 8.78 2.44 9.84 6.61 14 15.56 5.05 14.5 4'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: 14px 10px;
+}
+
+/* ############################### SIzes###################### */
+.arrow {
+    font-size: 1.2rem;
+    color: #000;
+    font-weight: 700;
+}
+
+.sizes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.apply-btn {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* ############################### side nav##################### */
+
+.filter-parent {
+    padding: 0.5rem 0;
+    margin: 0.5rem 0;
+}
+
+.side-filter {
+    width: 25%;
+    border: 1px solid #ddd;
+    padding: 0.8rem;
+    border-radius: 10px;
+    margin-bottom: auto;
+}
+
+
+.side-nav {
+    position: absolute;
+    /* top: 0; */
+    left: 0;
+    width: 0;
+    margin: 0 auto;
+    display: none;
+    border-radius: 20px;
+    padding: 1rem 2rem;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: 5px 0 5px 0 #333;
+    background-color: white;
+    /* backdrop-filter: blur(200px); */
+    z-index: 9999;
+}
+
+
+.side .menu-button {
+    display: none;
+    position: fixed;
+    right: 100px;
+    z-index: 991;
+    cursor: pointer;
+}
+/* #################### Casual head############# */
+
+.casual-head {
+    display: flex;
+    justify-content: space-between;
+    /* padding-right: 2rem; */
+    /* align-items: center; */
+}
+
+.casual-head h3 {
+    margin: 0;
+    align-items: center;
+    /* padding-right: 10rem; */
+    font-size: 2rem;
+}
+
+.casual-head p {
+    /* margin-bottom: 1rem; */
+    font-size: 1rem;
+}
+
+
+
+/* ############################# Blog card design######### */
+
+.blog-card-likes {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.blog-card-likes .grey-card {
+    font-size: 1.3rem;
+    text-decoration: line-through;
+    font-weight: 600;
+}
+
+.blog-card-likes .price {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.blog-card-info .rating {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.blog-card-likes .red-card {
+    background: #FF33331A;
+    color: #ff3333;
+    border-radius: 10px;
+}
+
+.star {
+    color: #FFC633;
+    font-size: 1.5rem;
+}
+
+.half-star {
+    background: linear-gradient(to right, gold 50%, gray 50%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.blog-card-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    gap: 2rem;
+
+}
+
+.blog-card{
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.blog-card,
+.blog-card img{
+    max-width: 250px;
+    cursor: pointer;
+}
+
+.blog-card-image img {
+    border-radius: 10px;
+}
+
+.blog-card-body {
+    line-height: 1.8rem;
+}
+
+.showcase-area {
+    /* width: 75%; */
+    margin:0 auto;
+}
+
+/* ######################## Pagination############### */
+.pagination-container{
+    width: 100%;
+    overflow-x: auto;
+}
+
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #383838;
+    padding: 1rem 0;
+    border-radius: 6px;
+    margin-top: 2rem;
+    overflow: auto;
+}
+
+.page {
+    margin: 1.3rem 1.9rem;
+}
+
+.page li {
+    display: inline-block;
+    margin: 0 0.3rem;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 2.8rem;
+    cursor: pointer;
+    background-position: 0 -45px;
+    transition: background-position 0.5s;
+}
+
+.page li.active {
+    color: #fff;
+    background: linear-gradient(#ff4568, #ff4568);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.btn1,
+.btn2 {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #383838;
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border: 1px solid red;
+    padding: 0.5rem;
+    border-radius: 10px;
+
+}
+
+.btn1 img {
+    width: 24px;
+    margin-right: 1rem;
+}
+
+.btn2 img {
+    width: 24px;
+    margin-left: 1rem;
+    transform: rotate(180deg);
+}
+
+
+
+
+.filter-parent input[type=range] {
+    background-color: rgb(105, 24, 24);
+    color: #d62727;
+}
+
+#range {
+    background-color: red;
+    color: red;
+}
+
+
+/* ############# footer styling############# */
+
+.footer {
+    background-color: #f0f0f0;
+}
+
+
+.footer-box ul {
+    list-style-type: none;
+    line-height: 2rem;
+    color: #00000099;
+
+}
+
+.footer-head {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.social-media {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.social-media a {
+    color: #000;
+    font-size: 1.3rem;
+}
+
+.social-media li a:hover {
+    color: rgb(165, 107, 107);
+}
+
+/* ############# footer styling########## */
+.foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+
+.footer-image {
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-image img {
+    display: inline-block;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+
+/* ############### Update container styling########### */
+input[type=email] {
+    border-radius: 30px;
+    font-size: 1rem;
+    background-image: url(./images/Vector\ \(8\).png);
+    background-position: 16px 16px;
+    background-repeat: no-repeat;
+}
+
+
+.footer-container {
+    position: relative;
+}
+
+.footer-boxes {
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    gap: 1rem;
+    padding: 7rem 0 2rem;
+}
+
+.update-container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    background-color: #000;
+    color: #fff;
+    border-radius: 20px;
+    padding: 1.5rem 2.5rem;
+    position: absolute;
+    top: -30%;
+    left: 5%;
+
+}
+
+.search-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+
+}
+
+.search-box input {
+    padding: 1rem 2.5rem;
+    border-radius: 30px;
+    font-size: 1rem;
+}
+
+
+
+
+/* ######################################### */
+@media(max-width: 600px) {
+    .sidebar {
+        width: 100%;
+    }
+
+    nav a {
+        padding: 0 10px;
+    }
+
+    .footer-boxes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-boxes .first {
+        grid-column: 1/-1;
+        width: 100%;
+    }
+
+    .foot {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .foot img {
+        border-radius: 10px;
+    }
+
+    .blog-card,
+    .blog-card img {
+        /* width: auto; */
+        min-width: 100px;
+    }
+
+    /* ############################### */
+    .hide-small-device {
+        display: none;
+    }
+
+    .side .menu-button {
+        display: block;
+        right: 0;
+    }
+
+    .side-nav {
+        width: 100%;
+        height: auto;
+    }
+
+    .filter-div {
+        border: none;
+    }
+
+    .casual-head .sort{
+        display: none;
+    }
+
+    .side-filter {
+        border: none;
+        padding: 0;
+    }
+
+    .pagination{
+        margin-top: 0;
+        margin-bottom: 3rem;
+    }
+
+    .casual-head p {
+        /* margin-bottom: 1rem; */
+        font-size: 0.8rem;
+    }
+
+}
+
+@media (max-width:800px) {
+    .blog-card-wrapper{
+        grid-template-columns: repeat(2,1fr);
+        margin:0 auto;
+    }
+}
+
+/* ########### Tablets ############# */
+@media (max-width: 1024px) {
+    .hideOnMobile {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    nav ul {
+        flex-wrap: nowrap;
+    }
+
+    nav a {
+        padding: 0 10px;
+    }
+
+    .footer-boxes {
+        /* gap: 2rem; */
+        padding: 10rem 0 2rem;
+    }
+
+    .footer-boxes .first {
+        grid-column: 1/-1;
+    }
+
+    .update-container {
+        flex-direction: column;
+        padding: 1rem 0.5rem;
+    }
+
+    /* ######################################## */
+    .menu-button a .svg path{
+        fill:#fff;
+    }
+
+    .hide-small-device {
+        display: none;
+    }
+
+    .side .menu-button {
+        display: block;
+        /* right: ; */
+    }
+
+    .side .menu-button a{
+        color: white;
+    }
+
+    .side-nav {
+        width: 100%;
+        height: auto;
+    }
+
+    .filter-div {
+        display: block;
+        border: none;
+        gap: 0;
+    }
+    /* .blog-card-wrapper{
+        grid-template-columns: repeat(3,1fr);
+    } */
+
+    .social-media .para{
+        width: 70%;
+    }
+
+    .blog-card,
+    .blog-card img{
+        /* width: auto; */
+        min-width: 150px;
+    }
+
+    .casual-head{
+        justify-content: start;
+        gap: 2rem;
+    }
+
+    .showcase-area{
+        margin-bottom: 5rem;
+    }
+
+    .update-container{
+        top: -30;
+    }
+
+    .side-filter {
+        border: none;
+        padding: 0;
+    }
+
+}  
